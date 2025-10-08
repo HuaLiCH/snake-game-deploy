@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Game</title>
+    <link rel="stylesheet" href="snake-style.css">
+</head>
+<body>
+    <div class="game-container">
+        <!-- Game Header -->
+        <header class="game-header">
+            <h1>Snake Game</h1>
+            <div class="score-display">
+                <div class="current-score">Score: <span id="current-score">0</span></div>
+                <div class="high-score">High Score: <span id="high-score">0</span></div>
+            </div>
+        </header>
+
+        <!-- Game Controls -->
+        <div class="game-controls">
+            <button id="start-btn" class="control-btn">Start</button>
+            <button id="pause-btn" class="control-btn" disabled>Pause</button>
+            <button id="restart-btn" class="control-btn">Restart</button>
+        </div>
+
+        <!-- Game Settings -->
+        <div class="game-settings">
+            <div class="setting-group">
+                <button id="sound-toggle" class="setting-btn">🔊 Sound: ON</button>
+            </div>
+            <div class="speed-info">
+                <span>🚀 Speed increases with score!</span>
+            </div>
+        </div>
+
+        <!-- Power-up Status -->
+        <div id="powerup-status" class="powerup-status hidden">
+            <span id="powerup-text">Active: </span>
+            <div id="powerup-timer" class="powerup-timer"></div>
+        </div>
+
+        <!-- Game Canvas -->
+        <div class="game-area">
+            <canvas id="gameCanvas" width="400" height="400"></canvas>
+            <div id="game-over" class="game-over-screen hidden">
+                <h2>Game Over!</h2>
+                <p>Final Score: <span id="final-score">0</span></p>
+                <button id="play-again-btn" class="control-btn">Play Again</button>
+            </div>
+        </div>
+
+        <!-- Game Instructions -->
+        <div class="instructions">
+            <h3>How to Play:</h3>
+            <ul>
+                <li>Use arrow keys to control the snake</li>
+                <li>Eat food to grow and earn points:</li>
+                <li class="food-info">
+                    <span class="food-type food-1">●</span> Red food = 1 point
+                </li>
+                <li class="food-info">
+                    <span class="food-type food-2">●</span> Blue food = 2 points
+                </li>
+                <li class="food-info">
+                    <span class="food-type food-3">●</span> Green food = 3 points
+                </li>
+                <li>Avoid hitting walls or yourself!</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="snake-script.js"></script>
+</body>
+</html>
